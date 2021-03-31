@@ -20,7 +20,7 @@ const addBlogPost = (dispatch) => {
 }
 
 const deleteBlogPost = (dispatch) => {
-    return () => {
+    return (id) => {
         dispatch({type: 'delete_blogpost', postID: id});
     }
 }
