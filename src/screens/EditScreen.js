@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native';
 import { Context } from '../context/BlogContext';
 
-const ShowScreen = ({ navigation }) => {
+const EditScreen = ({ navigation }) => {
     const {state} = useContext(Context);
     const blogPost = state.find((post) => post.id === navigation.getParam('id'));
 
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
    
 });
 
-export default ShowScreen;
+export default EditScreen;
