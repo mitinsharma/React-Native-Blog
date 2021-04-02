@@ -11,7 +11,7 @@ const IndexScreen = ({ navigation }) => {
         <View>
             <FlatList
                 data={state}
-                keyExtractor={(blogPosts) => blogPosts.title}
+                keyExtractor={(blogPosts) => blogPosts.id}
                 renderItem= {({item}) => {
                     return (
                             <TouchableOpacity onPress={() => navigation.navigate('Show', {id: item.id})}>
@@ -31,7 +31,7 @@ const IndexScreen = ({ navigation }) => {
 IndexScreen.navigationOptions = ({ navigation }) => {
     return {
         headerRight: () => <TouchableOpacity onPress={ () => navigation.navigate('Create')}>
-            <Feather name="plus" size={24} color="black" size={24} />
+            <Feather name="plus" size={24} color="black" size={24} style={styles.navIconStyle}/>
         </TouchableOpacity>
     };
 }
@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
     },
     iconStyle: {
         color: '#000'
+    }, 
+    navIconStyle: {
+        paddingHorizontal:10
     }
 });
 
